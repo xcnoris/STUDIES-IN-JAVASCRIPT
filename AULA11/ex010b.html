@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PASSAPORTE</title>
+</head>
+<body>
+    <H1>SISTEMAS DE PASSAPORTE</H1>
+    DIGITE SEU NOME AQUI <input type="text" name="txtnome" id="txtnome"></br>
+    SEU PAÍS DE NASCIMENTO É<input type="text" name="txtpais" id="txtpais"></br>
+    <input type="button" value="VERIFICAR ORIGEM" onclick="constar()">
+    <div id="res"></div>
+    <script>
+        function constar() {
+            var txtp = document.getElementById('txtpais')
+            var txtno = document.getElementById('txtnome')
+            var res = document.querySelector('div#res')
+            var nom = (txtno.value)
+            var orig = (txtp.value)
+            res.innerHTML=`<p>Olá <strong>${nom}</strong>.</p>`
+            res.innerHTML += `<p>Você nasceu em <strong>${orig}</strong></p>`
+                if (orig!='Brasil') {
+                    res.innerHTML+=`<p>Você é <strong>estrangeiro</strong></p>`
+                } else {
+                res.innerHTML+=`<p> Você é Brasileiro.</p>`
+                } 
+        }
+    </script> 
+</body>
+</html>
